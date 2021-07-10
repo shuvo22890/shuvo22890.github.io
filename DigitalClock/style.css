@@ -1,0 +1,215 @@
+*{margin: 0; padding: 0;}
+
+body{
+	font-family: 'Digital-7';
+	background: #000;
+}
+
+.clock_wrap {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 600px;
+	height: 250px;
+	border-radius: 15px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	overflow: hidden;
+	box-shadow: inset 2px 2px 3px #ffffff82, inset -2px -2px 3px #88888882;
+}
+
+.clock_wrap .index {
+	flex: 0;
+	flex-basis: 24%;
+	position: relative;
+	color: #fff;
+	font-size: 85px;
+}
+
+.clock_wrap .colon {
+	flex-basis: 4%;
+}
+
+.clock_wrap .index:before{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.clock_wrap .colon:before{
+	content: ':';
+}
+
+.clock_wrap .index.ampm:before{
+	content: 'am';
+	animation: ampm 43200s infinite linear;
+	animation-delay: -53920s;/* Static point 54000  formula=(60-(contentOfMinute+1))60 + (60 - contentOfSecond) - 54000 */
+}
+
+.clock_wrap .index.second:before{
+	content: '40';
+	animation: sec 60s infinite linear;
+	animation-delay: .5s;
+}
+
+.clock_wrap .index.minute:before{
+	content: '58';
+	animation: min 3600s infinite linear;
+	animation-delay: -10s;/*Static point 30s formula="30-contentOfSecond" */
+}
+
+.clock_wrap .index.hour:before{
+	content: '11';
+	animation: hour 43200s infinite linear;
+	animation-delay: -1720s;/*Static point 1800 formula="{(60-contentOfMinute)60 - 1800 - contentOfSecond}" */
+	
+}
+
+@keyframes sec{
+	1.6666666666667%{content: "41"}
+	3.3333333333334%{content: "42"}
+	5.0000000000001%{content: "43"}
+	6.6666666666668%{content: "44"}
+	8.3333333333335%{content: "45"}
+	10%{content: "46"}
+	11.6666666666667%{content: "47"}
+	13.3333333333334%{content: "48"}
+	15%{content: "49"}
+	16.6666666666667%{content: "50"}
+	18.333333333333%{content: "51"}
+	20%{content: "52"}
+	21.6666666666667%{content: "53"}
+	23.333333333333%{content: "54"}
+	25%{content: "55"}
+	26.6666666666667%{content: "56"}
+	28.333333333333%{content: "57"}
+	30%{content: "58"}
+	31.6666666666667%{content: "59"}
+	33.333333333333%{content: "00"}
+	35%{content: "01"}
+	36.6666666666667%{content: "02"}
+	38.333333333333%{content: "03"}
+	40%{content: "04"}
+	41.6666666666667%{content: "05"}
+	43.333333333333%{content: "06"}
+	45%{content: "07"}
+	46.6666666666667%{content: "08"}
+	48.333333333333%{content: "09"}
+	50%{content: "10"}
+	51.6666666666667%{content: "11"}
+	53.333333333333%{content: "12"}
+	55%{content: "13"}
+	56.6666666666667%{content: "14"}
+	58.333333333333%{content: "15"}
+	60%{content: "16"}
+	61.6666666666667%{content: "17"}
+	63.333333333333%{content: "18"}
+	65%{content: "19"}
+	66.6666666666667%{content: "20"}
+	68.333333333333%{content: "21"}
+	70%{content: "22"}
+	71.6666666666667%{content: "23"}
+	73.333333333333%{content: "24"}
+	75%{content: "25"}
+	76.6666666666667%{content: "26"}
+	78.333333333333%{content: "27"}
+	80%{content: "28"}
+	81.6666666666667%{content: "29"}
+	83.333333333333%{content: "30"}
+	85%{content: "31"}
+	86.6666666666667%{content: "32"}
+	88.333333333333%{content: "33"}
+	90%{content: "34"}
+	91.6666666666667%{content: "35"}
+	93.333333333333%{content: "36"}
+	95%{content: "37"}
+	96.6666666666667%{content: "38"}
+	98.333333333333%{content: "39"}
+	100%{content: "40"}
+}
+
+@keyframes min{
+	1.6666666666667%{content: "59"}
+	3.3333333333334%{content: "00"}
+	5.0000000000001%{content: "01"}
+	6.6666666666668%{content: "02"}
+	8.3333333333335%{content: "03"}
+	10%{content: "04"}
+	11.6666666666667%{content: "05"}
+	13.3333333333334%{content: "06"}
+	15%{content: "07"}
+	16.6666666666667%{content: "08"}
+	18.333333333333%{content: "09"}
+	20%{content: "10"}
+	21.6666666666667%{content: "11"}
+	23.333333333333%{content: "12"}
+	25%{content: "13"}
+	26.6666666666667%{content: "14"}
+	28.333333333333%{content: "15"}
+	30%{content: "16"}
+	31.6666666666667%{content: "17"}
+	33.333333333333%{content: "18"}
+	35%{content: "19"}
+	36.6666666666667%{content: "20"}
+	38.333333333333%{content: "21"}
+	40%{content: "22"}
+	41.6666666666667%{content: "23"}
+	43.333333333333%{content: "24"}
+	45%{content: "25"}
+	46.6666666666667%{content: "26"}
+	48.333333333333%{content: "27"}
+	50%{content: "28"}
+	51.6666666666667%{content: "29"}
+	53.333333333333%{content: "30"}
+	55%{content: "31"}
+	56.6666666666667%{content: "32"}
+	58.333333333333%{content: "33"}
+	60%{content: "34"}
+	61.6666666666667%{content: "35"}
+	63.333333333333%{content: "36"}
+	65%{content: "37"}
+	66.6666666666667%{content: "38"}
+	68.333333333333%{content: "39"}
+	70%{content: "40"}
+	71.6666666666667%{content: "41"}
+	73.333333333333%{content: "42"}
+	75%{content: "43"}
+	76.6666666666667%{content: "44"}
+	78.333333333333%{content: "45"}
+	80%{content: "46"}
+	81.6666666666667%{content: "47"}
+	83.333333333333%{content: "48"}
+	85%{content: "49"}
+	86.6666666666667%{content: "50"}
+	88.333333333333%{content: "51"}
+	90%{content: "52"}
+	91.6666666666667%{content: "53"}
+	93.333333333333%{content: "54"}
+	95%{content: "55"}
+	96.6666666666667%{content: "56"}
+	98.333333333333%{content: "57"}
+	100%{content: "58"}
+}
+
+@keyframes hour{
+	8.3333333333333%{content: '12'}
+	16.666666666667%{content: '01'}
+	25%{content: '02'}
+	33.3333333333333%{content: '03'}
+	41.666666666667%{content: '04'}
+	50%{content: '05'}
+	58.3333333333333%{content: '06'}
+	66.666666666667%{content: '07'}
+	75%{content: '08'}
+	83.3333333333333%{content: '09'}
+	91.666666666667%{content: '10'}
+	100%{content: '11'}
+}
+
+@keyframes ampm{
+	50%{content: 'pm'}
+	100%{content: 'am'}
+}
